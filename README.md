@@ -1,5 +1,16 @@
-# AirBnB Clone - The Console
-The console is the first segment of the AirBnB project at Holberton School that will collectively cover fundamental concepts of higher level programming. The goal of AirBnB project is to eventually deploy our server a simple copy of the AirBnB Website(HBnB). A command interpreter is created in this segment to manage objects for the AirBnB(HBnB) website.
+# AirBnB Clone - Web Dynamic
+This is the last segment of the AirBnB project at Holberton School in which we are gonna web pages some functionality to make it dynamic insteade of static content that just sit there.
+It also, gonna handle API, sending data to browsers and retrieving data from it to the server.
+
+This project will focus on:
+* How cool it is to request your own API
+* modify an HTML element style
+* get and update an HTML element content
+* modify the DOM
+* make a GET request with JQuery Ajax
+* make a POST request with JQuery Ajax
+* listen/bind to DOM events
+* listen/bind to user events
 
 #### Functionalities of this command interpreter:
 * Create a new object (ex: a new User or a new Place)
