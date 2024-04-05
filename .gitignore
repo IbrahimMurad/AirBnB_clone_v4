@@ -1,0 +1,10 @@
+*.json
+__py*
+main*
+README2.md
+*~
+~*
+#*
+*#
+~#~
+__pycache__
