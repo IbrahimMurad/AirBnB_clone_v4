@@ -6,7 +6,9 @@ function sellectedAmenities () {
 }
 
 function populatePlaces(places) {
+  $('section.places').empty();
   for (const place of places) {
+    
     let thePlace = document.createElement("article");
 
     let placeTitle = document.createElement('div');
@@ -96,4 +98,16 @@ document.addEventListener('DOMContentLoaded', function () {
       populatePlaces(response);
     }
   });
+
+  $('button').on('click', function () {
+    $.ajax({
+      url: 'http://0.0.0.0:5001/api/v1/places_search/',
+      type: 'POST',
+      contentType: 'application/json',
+      data: JSON.stringify({'amenities': Object.keys(amenities)}),
+      success: function (response) {
+        populatePlaces(response);
+      }
+    });
+  })
 });
