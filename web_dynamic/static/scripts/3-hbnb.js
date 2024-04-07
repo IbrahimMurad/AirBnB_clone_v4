@@ -1,59 +1,54 @@
-let amenities = {};
-
+const amenities = {};
 
 function sellectedAmenities () {
   $('DIV.amenities h4').text(Object.values(amenities).join(', '));
 }
 
-function populatePlaces(places) {
+function populatePlaces (places) {
   for (const place of places) {
-    let thePlace = document.createElement("article");
+    const thePlace = document.createElement('article');
 
-    let placeTitle = document.createElement('div');
-    let placeInfo = document.createElement('div');
+    const placeTitle = document.createElement('div');
+    const placeInfo = document.createElement('div');
     // let placeUser = document.createElement('div');
-    let placeDescription = document.createElement('div');
-
+    const placeDescription = document.createElement('div');
 
     placeTitle.classList.add('title_box');
 
-    let placeName = document.createElement('h2');
+    const placeName = document.createElement('h2');
     placeName.textContent = place.name;
     placeTitle.appendChild(placeName);
 
-    let priceByNight = document.createElement('div');
+    const priceByNight = document.createElement('div');
     priceByNight.classList.add('price_by_night');
     priceByNight.textContent = '$' + place.price_by_night;
     placeTitle.appendChild(priceByNight);
 
     thePlace.appendChild(placeTitle);
 
-
     placeInfo.classList.add('information');
 
-    let maxGuest = document.createElement('div');
+    const maxGuest = document.createElement('div');
     maxGuest.classList.add('max_guest');
     maxGuest.textContent = place.max_guest + ' Guests';
     placeInfo.appendChild(maxGuest);
 
-    let numRooms = document.createElement('div');
+    const numRooms = document.createElement('div');
     numRooms.classList.add('number_rooms');
     numRooms.textContent = place.number_rooms + ' Bedrooms';
     placeInfo.appendChild(numRooms);
 
-    let numBathrooms = document.createElement('div');
+    const numBathrooms = document.createElement('div');
     numBathrooms.classList.add('number_bathrooms');
     numBathrooms.textContent = place.number_bathrooms + ' Bathrooms';
     placeInfo.appendChild(numBathrooms);
 
     thePlace.appendChild(placeInfo);
 
-
     // placeUser.classList.add('user');
     // placeUser.innerHTML = `<b>Owner:</b> ${place.user}`;
 
     // thePlace.appendChild(placeUser);
-
 
     placeDescription.classList.add('description');
     placeDescription.innerHTML = place.description;
@@ -70,8 +65,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if ($(this).is(':checked')) {
         amenities[$(this).attr('data-id')] = $(this).attr('data-name');
         sellectedAmenities();
-      }
-	  else {
+      } else {
         delete amenities[$(this).attr('data-id')];
         sellectedAmenities();
       }
@@ -79,10 +73,9 @@ document.addEventListener('DOMContentLoaded', function () {
   );
 
   $.get('http://0.0.0.0:5001/api/v1/status/', function (data, status) {
-    if (status === "success") {
+    if (status === 'success') {
       $('div#api_status').addClass('available');
-    }
-    else {
+    } else {
       $('div#api_status').removeClass('available');
     }
   });
