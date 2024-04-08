@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function () {
       url: 'http://0.0.0.0:5001/api/v1/places_search/',
       type: 'POST',
       contentType: 'application/json',
-      data: JSON.stringify({ 'amenities': Object.keys(amenities) }),
+      data: JSON.stringify({ amenities: Object.keys(amenities) }),
       success: function (response) {
         populatePlaces(response);
       }

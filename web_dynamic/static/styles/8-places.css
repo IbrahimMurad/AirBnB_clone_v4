@@ -99,3 +99,83 @@
 .user {
   margin-bottom: 1.5%;
 }
+
+
+.reviews {
+    margin-top: 40px;
+}
+
+.places .reviews,
+.places .amenities {
+    text-align: left;
+    margin-top: 40px;
+    width: 100%;
+    position: relative;
+}
+
+.amenities h2,
+.reviews h2 {
+    border-bottom: 1px solid #DDDDDD;
+    text-align: left;
+    font-size: 16px;
+}
+
+.amenities ul {
+    padding-left: 0;
+    list-style-type: none;
+}
+
+.reviews ul {
+    padding-left: 0;
+    list-style-type: none;
+    display: none;
+}
+
+.amenities li {
+    display: flex;
+    align-items: center;
+}
+
+.amenities li::before {
+    content: "";
+    width: 25px;
+    height: 25px;
+}
+
+.amenities li::after {
+    margin-left: 15px;
+}
+
+li.wifi::before {
+    background: url("../images/icon_wifi.png");
+    background-size: contain;
+}
+
+
+li.pets::before {
+    background: url("../images/icon_pets.png");
+    background-size: contain;
+}
+
+li.tv::before {
+    background: url("../images/icon_tv.png");
+    background-size: contain;
+}
+
+.reviews h3 {
+    font-size: 14px;
+    margin-bottom: 0px;
+}
+
+.reviews p {
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.reviews span {
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+    color: #FF5A5F;
+}
